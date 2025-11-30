@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kritish Overseas - Expert study abroad consultants. Get visa assistance, IELTS coaching, and university admissions guidance for UK, USA, Canada, Australia & Germany.">
+    <title>Kritish Overseas | Your Gateway to Global Education</title>
+    
+    <!-- FONTS: Playfair Display (Headlines) & Montserrat (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- ICONS: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. GLOBAL VARIABLES & RESET --- */
+        :root {
+            /* BRAND COLORS */
+            --primary: #002D62; /* Deep Royal Blue */
+            --primary-dark: #001a3d;
+            --accent: #FF8C00; /* Vibrant Orange */
+            --accent-hover: #e07b00;
+            
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --glass: rgba(255, 255, 255, 0.98);
+            --glass-dark: rgba(0, 45, 98, 0.95);
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Utility Classes */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+        
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+        /* Elegant Underline */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            margin: 15px auto 0;
+        }
+        .section-subtitle { color: var(--text-light); margin-bottom: 60px; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 50px; 
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+        }
+        .btn-primary:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 45, 98, 0.3);
+        }
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.8);
+            color: var(--white);
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+        .btn-outline:hover { background: var(--white); color: var(--primary); border-color: var(--white); }
+
+        /* --- 2. HEADER & NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            transition: 0.4s;
+            padding: 15px 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+        
+        header.sticky {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo Styling */
+        .logo-img {
+            height: 50px; 
+            width: auto;
+            transition: 0.3s;
+            filter: brightness(0) invert(1);
+        }
+        
+        header.sticky .logo-img {
+            filter: none;
+            height: 45px;
+        }
+
+        /* Desktop Nav Links */
+        .nav-links { display: flex; gap: 40px; align-items: center; }
+        .nav-links li a {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        .nav-links li a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 2px;
+            background: var(--accent); transition: 0.3s;
+        }
+        .nav-links li a:hover::after { width: 100%; }
+        .nav-links li a:hover { color: var(--accent); }
+        header.sticky .nav-links li a { color: var(--text-dark); }
+        header.sticky .nav-links li a:hover { color: var(--primary); }
+
+        /* Mobile Menu */
+        .hamburger { display: none; color: var(--white); font-size: 24px; cursor: pointer; transition: 0.3s; }
+        header.sticky .hamburger { color: var(--primary); }
+
+        /* --- 3. HERO SLIDER --- */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 1.5s ease-in-out, transform 8s ease; 
+            background-size: cover;
+            background-position: center;
+        }
+        .slide.active { opacity: 1; transform: scale(1); z-index: 1; }
+        
+        /* Overlay Gradient */
+        .slide::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(0, 45, 98, 0.4) 0%, rgba(0, 45, 98, 0.3) 50%, rgba(0, 45, 98, 0.9) 100%);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 55%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            width: 90%;
+            max-width: 900px;
+            color: var(--white);
+        }
+
+        .hero-title {
+            font-size: 72px; 
+            line-height: 1.1;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s cubic-bezier(0.2, 1, 0.3, 1) 0.3s;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .hero-sub {
+            font-size: 18px;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s cubic-bezier(0.2, 1, 0.3, 1) 0.5s;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero-btn-wrap {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s cubic-bezier(0.2, 1, 0.3, 1) 0.7s;
+        }
+
+        .slide.active .hero-title,
+        .slide.active .hero-sub,
+        .slide.active .hero-btn-wrap {
+            opacity: 1; transform: translateY(0);
+        }
+
+        /* --- 4. TRUST STRIP --- */
+        .trust-strip { background: #fbfbfb; padding: 60px 0; border-bottom: 1px solid #eee; }
+        .trust-title { 
+            text-align: center; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            color: #999; 
+            margin-bottom: 40px; 
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+        .logo-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            opacity: 0.7;
+        }
+        .partner-logo {
+            height: 35px;
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+        .partner-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+        /* --- 5. SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 50px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05); 
+            transition: 0.4s;
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+            text-align: center; 
+        }
+        .service-card:hover { transform: translateY(-15px); border-color: transparent; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        
+        .service-icon {
+            font-size: 45px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: 0.4s;
+        }
+        .service-card:hover .service-icon { color: var(--accent); transform: scale(1.1); }
+
+        .service-card h3 { font-size: 22px; margin-bottom: 15px; }
+        .service-card p { font-size: 15px; color: var(--text-light); line-height: 1.7; }
+        
+        /* --- 6. UNIVERSAL SLIDER STYLES (Loops & Swipes) --- */
+        /* IMPORTANT: Overflow hidden here hides the scrollbar but JS handles movement */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden; 
+            padding: 20px 0 50px 0;
+            cursor: grab; /* Indicates draggable */
+            /* HIDE SCROLLBARS */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .slider-wrapper::-webkit-scrollbar { 
+            display: none; 
+        }
+        .slider-wrapper:active {
+            cursor: grabbing;
+        }
+
+        .destinations-track, .testimonial-track {
+            display: flex;
+            gap: 30px;
+            width: max-content; /* Allow width to expand for infinite loop */
+            padding-left: 20px; 
+            /* Transition handled by JS requestAnimationFrame for smoothness */
+        }
+
+        /* Cards Style */
+        .dest-card, .test-card {
+            flex-shrink: 0; /* Prevent squishing */
+            transition: transform 0.4s;
+        }
+
+        /* Destinations Specifics */
+        .destinations { background: #f4f6f8; position: relative; }
+        .dest-card {
+            width: 280px; 
+            height: 420px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            user-select: none; /* Prevent text selection while dragging */
+        }
+        .dest-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
+        .dest-img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; pointer-events: none; }
+        .dest-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0, 45, 98, 0.95) 0%, rgba(0, 45, 98, 0.4) 50%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; opacity: 0.9; transition: 0.4s;
+        }
+        .dest-card:hover .dest-img { transform: scale(1.15); }
+        .dest-card:hover .dest-overlay { opacity: 1; background: linear-gradient(to top, rgba(0, 45, 98, 1) 0%, rgba(0, 45, 98, 0.5) 60%, transparent 100%); }
+        .dest-content { transform: translateY(10px); transition: 0.4s; }
+        .dest-card:hover .dest-content { transform: translateY(0); }
+        .dest-name { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin-bottom: 5px; line-height: 1; }
+        .dest-sub { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: block; }
+        .dest-link { font-size: 14px; color: var(--white); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(20px); transition: 0.4s 0.1s; }
+        .dest-card:hover .dest-link { opacity: 1; transform: translateY(0); }
+        .dest-link i { font-size: 12px; transition: 0.3s; }
+        .dest-card:hover .dest-link i { transform: translateX(5px); }
+        .dest-badge {
+            position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+            padding: 8px 15px; border-radius: 30px; color: var(--white); font-size: 11px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Success Stories Specifics */
+        .testimonials { background: var(--white); }
+        .test-card {
+            background: #fff;
+            padding: 30px;
+            width: 320px; 
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid #eee;
+            user-select: none;
+        }
+        .test-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; pointer-events: auto; }
+        .test-quote { font-style: italic; color: var(--text-light); margin-bottom: 20px; font-size: 15px; }
+        .test-user { display: flex; align-items: center; gap: 15px; }
+        .test-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; pointer-events: none; }
+        .test-info h4 { font-size: 16px; margin-bottom: 3px; font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .test-badge { font-size: 10px; background: #fff3e0; color: var(--accent); padding: 3px 8px; border-radius: 20px; font-weight: 600; text-transform: uppercase; }
+
+        /* --- 8. STATS COUNTER (2x2 GRID Mobile) --- */
+        .stats {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 0; 
+            background-image: linear-gradient(rgba(0, 45, 98, 0.9), rgba(0, 45, 98, 0.9)), url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item { position: relative; }
+        .stat-item i { font-size: 40px; color: var(--accent); margin-bottom: 20px; display: inline-block;}
+        .stat-number { font-size: 56px; font-weight: 700; font-family: 'Playfair Display'; display: block; line-height: 1; margin-bottom: 10px; }
+        .stat-label { font-size: 13px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- 9. FINAL ACTION STRIP (CTA) --- */
+        .cta-strip {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 0;
+            color: var(--white);
+            text-align: center;
+        }
+        .cta-strip h2 { color: var(--white); font-size: 36px; margin-bottom: 15px; }
+        .cta-strip p { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+
+        /* --- 10. FOOTER --- */
+        footer {
+            background: #001a3d; /* Very Dark Blue */
+            color: #b0b8c6;
+            padding: 80px 0 30px;
+            font-size: 15px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        .footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 20px; }
+        .footer-col p { margin-bottom: 20px; line-height: 1.8; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #b0b8c6; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--accent); padding-left: 8px; }
+        
+        .social-links { display: flex; gap: 15px; margin-top: 25px; }
+        .social-links a { 
+            width: 40px; height: 40px; 
+            background: rgba(255,255,255,0.05); 
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; color: var(--white);
+            transition: 0.3s;
+        }
+        .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* --- 11. ELEGANT GLASS MODAL POPUP --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 45, 98, 0.6); /* Navy tint backdrop */
+            z-index: 10000;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none;
+            transition: 0.4s ease;
+            backdrop-filter: blur(8px);
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        
+        /* Updated Modal Box: Compact & Scrollable */
+        .modal-box {
+            background: rgba(255, 255, 255, 0.98);
+            width: 90%; max-width: 450px;
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            text-align: left;
+            max-height: 90vh; 
+            overflow-y: auto; 
+        }
+        .modal-overlay.active .modal-box { transform: scale(1) translateY(0); }
+        
+        .modal-close {
+            position: absolute; top: 15px; right: 15px;
+            font-size: 20px; cursor: pointer; color: #aaa;
+            transition: 0.3s;
+            width: 30px; height: 30px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+        }
+        .modal-close:hover { background: #eee; color: var(--primary); }
+        
+        .modal-title { font-size: 24px; text-align: center; margin-bottom: 10px; color: var(--primary); font-weight: 700; }
+        .modal-sub { text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 25px; }
+        
+        .form-group { margin-bottom: 20px; position: relative; }
+        .form-label { font-size: 11px; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+        .form-input { 
+            width: 100%; padding: 8px 0; border: none; border-bottom: 2px solid #eee; background: transparent;
+            font-family: 'Montserrat', sans-serif; font-size: 15px; outline: none; transition: 0.3s; border-radius: 0;
+        }
+        .form-input:focus { border-bottom-color: var(--accent); }
+        .form-select { 
+            width: 100%; padding: 8px 0; border: none; border-bottom: 2px solid #eee; background: transparent; 
+            font-size: 15px; outline: none; color: var(--text-dark); cursor: pointer;
+        }
+
+        /* --- RESPONSIVE CSS --- */
+        @media (max-width: 768px) {
+            
+            /* --- PREMIUM MOBILE MENU OVERLAY --- */
+            .nav-links {
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100vh;
+                background: var(--glass-dark);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+                z-index: 999;
+                opacity: 0; visibility: hidden; transform: translateY(-20px);
+                transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                padding: 0; box-shadow: none; right: auto;
+            }
+
+            .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
+            .nav-links.active li { opacity: 1; transform: translateY(0); }
+
+            /* Staggered Animation */
+            .nav-links li { opacity: 0; transform: translateY(20px); transition: 0.5s ease forwards; }
+            .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+            .nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
+            .nav-links.active li:nth-child(6) { transition-delay: 0.6s; }
+
+            .nav-links li a { 
+                color: var(--white); font-family: 'Playfair Display', serif; 
+                font-size: 32px; font-weight: 700; position: relative; text-transform: capitalize; 
+            }
+            .nav-links li a::after { background: var(--accent); height: 3px; bottom: -5px; }
+
+            /* Mobile Menu Button */
+            .nav-links li .btn-primary {
+                background: transparent; border: 2px solid var(--accent); color: var(--accent);
+                font-family: 'Montserrat', sans-serif; font-size: 14px; padding: 12px 40px; margin-top: 10px;
+            }
+            .nav-links li .btn-primary:hover { background: var(--accent); color: var(--white); }
+
+            .mobile-socials { display: flex; gap: 20px; margin-top: 20px; }
+            .mobile-socials a { color: var(--white); font-size: 20px; opacity: 0.7; }
+            .mobile-socials a:hover { opacity: 1; color: var(--accent); }
+
+            .hamburger { display: block; z-index: 1001; font-size: 28px; color: var(--white); transition: 0.3s; }
+            header.sticky .hamburger { color: var(--primary); }
+            header.sticky .hamburger.active { color: var(--white); }
+            
+            /* --- OTHER MOBILE ADJUSTMENTS --- */
+            .logo-img { height: 40px; }
+            .hero-title { font-size: 42px; }
+            .hero-sub { font-size: 16px; margin-bottom: 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .logo-grid { gap: 30px; justify-content: center; }
+            .partner-logo { height: 30px; }
+            
+            /* Slider */
+            .slider-wrapper { padding-bottom: 30px; } 
+            
+            /* Hide the Desktop controls on mobile */
+            .slider-controls { display: none; }
+            
+            .dest-card { width: 260px; margin-right: 15px; height: 380px; }
+            .section-title { font-size: 32px; }
+
+            /* Mobile Stats Grid (2x2) */
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 30px 15px; }
+            .stat-number { font-size: 36px; margin-bottom: 5px; }
+            .stat-item i { font-size: 28px; margin-bottom: 10px; }
+            .stat-label { font-size: 11px; line-height: 1.3; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVIGATION -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="web-logo-final1.png" alt="Kritish Overseas Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#success-stories">Success Stories</a></li>
+                <li><a href="#" class="btn btn-primary trigger-modal">Book Consultation</a></li>
+                <li class="mobile-only-socials" style="display: none;">
+                    <div class="mobile-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SLIDER -->
+    <section id="home" class="hero">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2070&auto=format&fit=crop');" alt="Study in Germany">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Gateway to <br>Free Education in Germany</h1>
+                <p class="hero-sub">Expert guidance for Public Universities, Blocked Accounts & Visa.</p>
+                <div class="hero-btn-wrap">
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop');" alt="Big Ben London with students">
+            <div class="hero-content">
+                <h1 class="hero-title">London is Calling <br>September Intake</h1>
+                <p class="hero-sub">Apply now to secure your scholarship at top universities.</p>
+                <div class="hero-btn-wrap">
+                    <a href="#" class="btn btn-outline trigger-modal">Check Eligibility</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?q=80&w=2070&auto=format&fit=crop');" alt="Students taking exam in classroom">
+            <div class="hero-content">
+                <h1 class="hero-title">Crack IELTS/PTE <br>with 8+ Bands</h1>
+                <p class="hero-sub">Join our expert coaching classes today.</p>
+                <div class="hero-btn-wrap">
+                    <a href="#" class="btn btn-outline trigger-modal">Join Class</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TRUST STRIP -->
+    <div class="trust-strip">
+        <div class="container">
+            <p class="trust-title">Trusted by Leading Universities</p>
+            <div class="logo-grid">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" class="partner-logo" alt="Uni 1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" class="partner-logo" alt="Uni 2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" class="partner-logo" alt="Uni 3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png" class="partner-logo" alt="Uni 4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png" class="partner-logo" alt="Uni 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. SERVICES SECTION -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Expertise</h2>
+                <p class="section-subtitle">End-to-end support for your study abroad journey</p>
+            </div>
+            
+            <div class="services-grid">
+                <article class="service-card">
+                    <i class="fas fa-user-graduate service-icon"></i>
+                    <h3>Career Counseling</h3>
+                    <p>Expert guidance to help you choose the right course and university based on your academic profile and career goals.</p>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-university service-icon"></i>
+                    <h3>University Admissions</h3>
+                    <p>Complete assistance with application processing, SOP writing, and offer letter management.</p>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-passport service-icon"></i>
+                    <h3>Visa Assistance</h3>
+                    <p>99% success rate. We handle financial documentation, forms, and prepare you for mock interviews.</p>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-book-open service-icon"></i>
+                    <h3>Test Preparation</h3>
+                    <p>Certified trainers for IELTS, PTE, and TOEFL to ensure you get the bands required for admission.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DESTINATIONS (INFINITE SCROLL/SWIPE SLIDER) -->
+    <section id="destinations" class="section-padding destinations">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Study Destinations</h2>
+                <p class="section-subtitle">Choose your dream country</p>
+            </div>
+
+            <!-- Track Container -->
+            <div class="slider-wrapper" id="destWrapper">
+                <div class="destinations-track" id="destTrack">
+                    <!-- Cards -->
+                    <div class="dest-card">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070" class="dest-img" alt="United Kingdom">
+                        <div class="dest-badge">50+ Unis</div>
+                        <div class="dest-overlay">
+                            <div class="dest-content">
+                                <h3 class="dest-name">United Kingdom</h3>
+                                <span class="dest-sub">Russell Group Experts</span>
+                                <div class="dest-link"><span>Explore</span><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="dest-card">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=2070" class="dest-img" alt="USA">
+                        <div class="dest-badge">Ivy League</div>
+                        <div class="dest-overlay">
+                            <div class="dest-content">
+                                <h3 class="dest-name">USA</h3>
+                                <span class="dest-sub">STEM Programs</span>
+                                <div class="dest-link"><span>Explore</span><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="dest-card">
+                        <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=2070" class="dest-img" alt="Canada">
+                        <div class="dest-badge">3 Year Work Permit</div>
+                        <div class="dest-overlay">
+                            <div class="dest-content">
+                                <h3 class="dest-name">Canada</h3>
+                                <span class="dest-sub">PR Pathways</span>
+                                <div class="dest-link"><span>Explore</span><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="dest-card">
+                        <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=2070" class="dest-img" alt="Australia">
+                        <div class="dest-badge">Group of 8</div>
+                        <div class="dest-overlay">
+                            <div class="dest-content">
+                                <h3 class="dest-name">Australia</h3>
+                                <span class="dest-sub">High Quality of Life</span>
+                                <div class="dest-link"><span>Explore</span><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="dest-card">
+                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2070" class="dest-img" alt="Germany">
+                        <div class="dest-badge">Free Tuition</div>
+                        <div class="dest-overlay">
+                            <div class="dest-content">
+                                <h3 class="dest-name">Germany</h3>
+                                <span class="dest-sub">Engineering Hub</span>
+                                <div class="dest-link"><span>Explore</span><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="dest-card">
+                        <img src="https://images.unsplash.com/photo-1605218427368-35b86121b83d?q=80&w=2070" class="dest-img" alt="Ireland">
+                        <div class="dest-badge">IT Hub</div>
+                        <div class="dest-overlay">
+                            <div class="dest-content">
+                                <h3 class="dest-name">Ireland</h3>
+                                <span class="dest-sub">Silicon Valley of Europe</span>
+                                <div class="dest-link"><span>Explore</span><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. VIDEO SUCCESS STORIES SLIDER (INFINITE SCROLL/SWIPE) -->
+    <section id="success-stories" class="section-padding testimonials">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Hear from students who achieved their dreams</p>
+            </div>
+            
+            <div class="slider-wrapper" id="testWrapper">
+                <div class="testimonial-track" id="testTrack">
+                    <!-- Video Card 1 -->
+                    <div class="test-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4?controls=0" title="Student Success Story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="test-quote">"Getting into LSE was a dream. The team guided me through every step of the visa process."</p>
+                        <div class="test-user">
+                            <div class="test-info">
+                                <h4>Michael B.</h4>
+                                <span class="test-badge">Accepted: UK</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Card 2 -->
+                    <div class="test-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4?controls=0" title="Student Success Story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="test-quote">"I was confused about Canada vs Australia. Their counseling clarified everything for me."</p>
+                        <div class="test-user">
+                            <div class="test-info">
+                                <h4>Priya S.</h4>
+                                <span class="test-badge">Accepted: Canada</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text Card 1 -->
+                    <div class="test-card">
+                        <p class="test-quote">"The IELTS coaching was excellent. I scored 8.0 bands and got a full scholarship for my Masters."</p>
+                        <div class="test-user">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150" class="test-img" alt="Student Anjali">
+                            <div class="test-info">
+                                <h4>Anjali K.</h4>
+                                <span class="test-badge">Accepted: USA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text Card 2 -->
+                    <div class="test-card">
+                        <p class="test-quote">"Smooth visa process for Germany. They handled my blocked account and uni application perfectly."</p>
+                        <div class="test-user">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150" class="test-img" alt="Student Rohan">
+                            <div class="test-info">
+                                <h4>Rohan D.</h4>
+                                <span class="test-badge">Accepted: Germany</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. STATS COUNTER -->
+    <section id="stats" class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="stat-number" data-target="7">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-plane-departure"></i>
+                    <span class="stat-number" data-target="700">0</span>
+                    <span class="stat-label">Visas Granted</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-university"></i>
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">University Partners</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="stat-number" data-target="98">0</span>%
+                    <span class="stat-label">Success Rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FINAL ACTION STRIP (CTA) -->
+    <section class="cta-strip">
+        <div class="container">
+            <h2>Confused about where to start?</h2>
+            <p>Take the first step towards your global career today.</p>
+            <a href="#services" class="btn btn-outline" style="background: white; color: var(--primary);">Explore All Services</a>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: About -->
+                <div class="footer-col">
+                    <div class="logo">
+                        <!-- Footer Logo -->
+                        <img src="web-logo-final1.png" alt="Kritish Overseas" style="height: 40px; filter: brightness(0) invert(1);">
+                    </div>
+                    <p style="margin-top: 20px;">Helping students realize their dreams of studying abroad since 2018. We provide end-to-end guidance for a seamless transition to global education.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Study in UK</a></li>
+                        <li><a href="#">Study in Canada</a></li>
+                        <li><a href="#">IELTS Coaching</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Education Street, London, UK</li>
+                        <li><i class="fas fa-phone"></i> +44 20 7946 0000</li>
+                        <li><i class="fas fa-envelope"></i> admissions@kritishoverseas.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Kritish Overseas. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 10. ELEGANT GLASS BOOKING MODAL -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-box">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <h3 class="modal-title">Start Your Journey</h3>
+            <p class="modal-sub">Fill in the details below, and our experts will get back to you within 24 hours.</p>
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" placeholder="e.g. John Doe">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="e.g. john@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-input" placeholder="e.g. +1 234 567 890">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Interested In</label>
+                    <select class="form-select">
+                        <option>Study in UK</option>
+                        <option>Study in USA</option>
+                        <option>Study in Canada</option>
+                        <option>Study in Australia</option>
+                        <option>Study in Europe</option>
+                        <option>IELTS Coaching</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Your Query (Optional)</label>
+                    <textarea class="form-input" rows="3" placeholder="Tell us more about your requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Request Call Back</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. Sticky Header & Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // 2. Mobile Menu Logic with Icon Swap & Socials Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const mobileSocials = document.querySelector('.mobile-only-socials');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active'); 
+            
+            if (navMenu.classList.contains('active')) {
+                mobileSocials.style.display = 'block';
+            } else {
+                mobileSocials.style.display = 'none';
+            }
+            
+            const icon = mobileToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 3. Hero Slider
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 5000); 
+
+        // 4. INFINITE TOUCH SLIDER ENGINE
+        function startInfiniteSlider(trackId, containerId) {
+            const track = document.getElementById(trackId);
+            const container = document.getElementById(containerId);
+            
+            // 1. Clone items for infinite effect
+            const items = Array.from(track.children);
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                track.appendChild(clone);
+            });
+
+            let position = 0;
+            const speed = 0.5; // Auto scroll speed
+            let isDragging = false;
+            let startPos = 0;
+            let prevTranslate = 0;
+            let animationID;
+
+            // Auto Scroll Function
+            function animate() {
+                if (!isDragging) {
+                    position -= speed;
+                    // Infinite Loop Reset Logic
+                    // If we have scrolled past the first set of items (half width)
+                    if (Math.abs(position) >= track.scrollWidth / 2) {
+                        position = 0;
+                    }
+                    track.style.transform = `translateX(${position}px)`;
+                }
+                animationID = requestAnimationFrame(animate);
+            }
+            
+            // Start Animation
+            animate();
+
+            // --- DRAG / SWIPE LOGIC ---
+            
+            function touchStart(event) {
+                isDragging = true;
+                // Get X position of mouse or touch
+                startPos = getPositionX(event);
+                prevTranslate = position;
+                container.style.cursor = 'grabbing';
+            }
+
+            function touchMove(event) {
+                if (isDragging) {
+                    const currentPosition = getPositionX(event);
+                    const currentMove = currentPosition - startPos;
+                    position = prevTranslate + currentMove;
+                    track.style.transform = `translateX(${position}px)`;
+                }
+            }
+
+            function touchEnd() {
+                isDragging = false;
+                container.style.cursor = 'grab';
+                
+                // Boundary checks for drag to prevent empty space if dragged too far right
+                if (position > 0) position = -track.scrollWidth / 2;
+                if (Math.abs(position) >= track.scrollWidth / 2) position = 0;
+            }
+
+            function getPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+
+            // Event Listeners
+            container.addEventListener('mousedown', touchStart);
+            container.addEventListener('touchstart', touchStart);
+
+            container.addEventListener('mousemove', touchMove);
+            container.addEventListener('touchmove', touchMove);
+
+            container.addEventListener('mouseup', touchEnd);
+            container.addEventListener('mouseleave', () => { if(isDragging) touchEnd() });
+            container.addEventListener('touchend', touchEnd);
+        }
+
+        // Initialize Sliders
+        startInfiniteSlider('destTrack', 'destWrapper');
+        startInfiniteSlider('testTrack', 'testWrapper');
+
+        // 5. Animated Counters
+        const statsSection = document.getElementById('stats');
+        const counters = document.querySelectorAll('.stat-number');
+        let started = false;
+
+        const startCounting = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / 100;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => startCounting(counter), 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !started) {
+                counters.forEach(counter => startCounting(counter));
+                started = true;
+            }
+        });
+
+        observer.observe(statsSection);
+
+        // 6. MODAL POPUP LOGIC
+        const modal = document.getElementById('bookingModal');
+        const triggerButtons = document.querySelectorAll('.trigger-modal');
+        const closeBtn = document.getElementById('closeModal');
+
+        triggerButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
